@@ -8,6 +8,25 @@ const arrayMes = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agos
 const ampm = document.getElementsByClassName('ampm')[0];
 
 
+function revealSection(){
+    if(ampm.classList.contains('doce')){
+        ampm.classList.remove('doce');
+        modoActual.textContent = "12hs"; 
+    } else {
+        ampm.classList.add('doce');
+        modoActual.textContent = "24hs";
+    }
+}
+/*
+if(hora < 12){
+    ampm.textContent = 'PM';
+    hora = hora - 12;
+} else{
+    ampm.textContent = 'AM';
+}
+*/
+modoActual.addEventListener( 'click', revealSection, false);
+
 const getHora = () => {
 
     const fecha = new Date();
@@ -25,22 +44,15 @@ const getHora = () => {
         anio: fecha.getFullYear(),
     }
 
-    function revealSection(){
-        if(ampm.classList.contains('reveal')){
-            ampm.classList.remove('reveal');
+    if(ampm.classList.contains('doce')){
+        if(hora < 12){
+            ampm.textContent = 'AM';
         } else {
-            ampm.classList.add('reveal');
+            ampm.textContent = 'PM';
+            hora = hora - 12;
         }
     }
-    /*
-    if(hora < 12){
-        ampm.textContent = 'PM';
-        hora = hora - 12;
-    } else{
-        ampm.textContent = 'AM';
-    }
-    */
-    modoActual.addEventListener( 'click', revealSection, false);
+
 
     dia < 10 ? fechaHoraObj.dia = `0${dia}` : fechaHoraObj.dia = dia;
     hora < 10 ? fechaHoraObj.hora = `0${hora}` : fechaHoraObj.hora = hora;

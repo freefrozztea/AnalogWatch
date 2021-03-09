@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap');
+
+html,
+body{
+    font-family: 'Oswald', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.reloj{
+    display: grid;
+    height: 10rem;
+    width: 50%;
+    grid-template-areas: "fecha fecha fecha"
+                         "horaActual opcion ampm";
+}
+
+.fecha{
+    grid-area: fecha;
+}
+
+.horaActual{
+    grid-area: horaActual;
+}
+
+.opcion{
+    grid-area: opcion;
+}
+
+.ampm{
+    display: none;
+}
+
+.ampm.reveal{
+    display: block;
+    grid-area: ampm;
+    padding: 5rem;
+    height: 2rem;
+}

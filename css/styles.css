@@ -7,32 +7,35 @@ body{
 }
 
 .reloj{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     height: 10rem;
     width: 50%;
-    grid-template-areas: "fecha fecha fecha"
-                         "horaActual opcion ampm";
+}
+
+.contenedor-modos{
+    display: flex;
+    flex-direction: row;
 }
 
 .fecha{
-    grid-area: fecha;
+    height: 2rem;
 }
 
 .horaActual{
-    grid-area: horaActual;
+    height: 2rem;
 }
 
 .opcion{
-    grid-area: opcion;
+    height: 2rem;
 }
 
 .ampm{
     display: none;
+    height: 2rem;
 }
 
-.ampm.reveal{
+.ampm.doce{
     display: block;
-    grid-area: ampm;
-    padding: 5rem;
     height: 2rem;
 }
